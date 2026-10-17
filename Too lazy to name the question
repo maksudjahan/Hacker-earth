@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int gcm(int a,int b){
+ int rem;
+ while(b!=0){
+	rem=a%b;
+	a=b;
+	b=rem;
+ }
+ return a;}
+ int lcm(int a,int b){
+ return (a*b)/gcm(a,b);}
+int main(){
+	int a,b,c,i,l,j=1,y,current;
+	cin>>a>>b>>c;
+	int count=0,cur=0;
+	for(i=1;;i++){
+		if(i%a==0||i%b==0){
+			count++;
+		}
+		if(count==c){
+			cur=i;
+			break;
+		}
+	}
+	cout<<cur<<" ";
+	if(cur%a==0&&cur%b==0){
+	 l=lcm(a,b);
+	y=cur/l;}
+	else if(cur%a==0){
+		l=a;
+		y=cur/a;
+	}
+	else if(cur%b==0){
+		l=b;
+		y=cur/b;
+	}
+	
+    for(j=1;j<=y;j++){
+		cout<<cur-j*l<<" ";
+	}
+	
+	cout<<endl;
+	}
