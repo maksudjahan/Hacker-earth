@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int prime(int n){
+	int i;
+	for(i=2;i<n;i++){
+		if(n%i==0) {
+			return 0;
+			break;
+		}
+	}
+	return 1;
+}
+int main(){
+string s;
+getline(cin,s);
+int l=s.size();
+int x=0,i;
+for(i=0;i<l;i++){
+	if(s[i]>='A'&&s[i]<='Z')
+	x=x-32-s[i];
+	else if(s[i]>='a'&&s[i]<='z')
+	x=x-32+s[i];
+	}
+	x=abs(x);
+  int y=prime(x);
+  cout<<y<<endl;
+}
