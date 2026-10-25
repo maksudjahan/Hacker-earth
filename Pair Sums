@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	ios_base::sync_with_stdio(false); 
+	cin.tie(NULL);
+	int n,i,x,k,j;
+	cin >> n>>k; 
+	int a[n];   
+	for(i=0;i<n;i++){
+		cin>>a[i];
+	}
+	int count=0;
+	sort(a,a+n);
+	i=0;j=n-1;
+	while(i<j){
+		int sum=a[i]+a[j];
+		if(sum==k){
+			 count=1;
+			 break;
+			 }
+		else if(sum>k) j--;
+		else i++;
+	}
+	if(count==0) cout<<"NO"<<endl;
+	if(count==1) cout<<"YES"<<endl;
+	}
+	
